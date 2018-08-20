@@ -21,7 +21,7 @@ public class Version {
     private String suffix;
     private int build;
 
-    public Version(int major, int middle, int minor, @Nullable String suffix, int build){
+    public Version(int major, int middle, int minor, @Nullable String suffix, int build) {
         this.major = major;
         this.middle = middle;
         this.minor = minor;
@@ -29,7 +29,7 @@ public class Version {
         this.build = build;
     }
 
-    public Version(@NotNull Properties properties){
+    public Version(@NotNull Properties properties) {
         this.major = Version.convertToIntOrDefault(properties.getProperty(MAJOR_PROP), DEFAULT_INT_VALUE);
         this.middle = Version.convertToIntOrDefault(properties.getProperty(MIDDLE_PROP), DEFAULT_INT_VALUE);
         this.minor = Version.convertToIntOrDefault(properties.getProperty(MINOR_PROP), DEFAULT_INT_VALUE);
@@ -37,23 +37,23 @@ public class Version {
         this.build = Version.convertToIntOrDefault(properties.getProperty(BUILD_PROP), DEFAULT_INT_VALUE);
     }
 
-    public String version(){
+    public String version() {
         String version = String.format("%d.%d.%d", this.major, this.middle, this.minor);
-        if(!this.suffix.equals(DEFAULT_STR_VALUE)){
+        if (!this.suffix.equals(DEFAULT_STR_VALUE)) {
             version = version + "-" + this.suffix;
         }
         return version;
     }
 
-    public String message(){
+    public String message() {
         return this.version() + " build " + this.build;
     }
 
-    public void incBuild(){
+    public void incBuild() {
         this.build++;
     }
 
-    public Properties saveToProperties(){
+    public Properties saveToProperties() {
         Properties properties = new Properties();
         properties.setProperty(MAJOR_PROP, Integer.toString(this.major));
         properties.setProperty(MIDDLE_PROP, Integer.toString(this.middle));
@@ -64,12 +64,12 @@ public class Version {
         return properties;
     }
 
-    private static int convertToIntOrDefault(String value, int defValue){
+    private static int convertToIntOrDefault(String value, int defValue) {
         int retValue = defValue;
-        try{
+        try {
             retValue = Integer.valueOf(value);
+        } catch (NumberFormatException ignore) {
         }
-        catch (NumberFormatException ignore){}
 
         return retValue;
     }

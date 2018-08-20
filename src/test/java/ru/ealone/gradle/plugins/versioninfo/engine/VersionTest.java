@@ -10,7 +10,7 @@ import static ru.ealone.gradle.plugins.versioninfo.engine.Version.*;
 public class VersionTest {
 
     @Test
-    public void constructor_withNullSuffix(){
+    public void constructor_withNullSuffix() {
         Version version = new Version(1, 1, 1, null, 100);
 
         assertEquals("1.1.1", version.version());
@@ -18,7 +18,7 @@ public class VersionTest {
     }
 
     @Test
-    public void constructor_withNotNullSuffix(){
+    public void constructor_withNotNullSuffix() {
         Version version = new Version(1, 1, 1, "suffix", 100);
 
         assertEquals("1.1.1-suffix", version.version());
@@ -26,7 +26,7 @@ public class VersionTest {
     }
 
     @Test
-    public void constructor_withCorrectProperties(){
+    public void constructor_withCorrectProperties() {
         Properties properties = new Properties();
         properties.setProperty(MAJOR_PROP, "1");
         properties.setProperty(MIDDLE_PROP, "1");
@@ -41,7 +41,7 @@ public class VersionTest {
     }
 
     @Test
-    public void constructor_withPropertiesWithoutSuffix(){
+    public void constructor_withPropertiesWithoutSuffix() {
         Properties properties = new Properties();
         properties.setProperty(MAJOR_PROP, "1");
         properties.setProperty(MIDDLE_PROP, "1");
@@ -55,7 +55,7 @@ public class VersionTest {
     }
 
     @Test
-    public void constructor_withPropertiesWithoutOneParameter(){
+    public void constructor_withPropertiesWithoutOneParameter() {
         Properties properties = new Properties();
         properties.setProperty(MAJOR_PROP, "1");
         properties.setProperty(MINOR_PROP, "1");
@@ -68,7 +68,7 @@ public class VersionTest {
     }
 
     @Test
-    public void incBuild_shouldIncrementBuildNumber(){
+    public void incBuild_shouldIncrementBuildNumber() {
         Version version = new Version(1, 1, 1, null, 100);
         version.incBuild();
 
