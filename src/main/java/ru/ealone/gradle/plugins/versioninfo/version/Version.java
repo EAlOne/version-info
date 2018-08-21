@@ -1,4 +1,4 @@
-package ru.ealone.gradle.plugins.versioninfo.engine;
+package ru.ealone.gradle.plugins.versioninfo.version;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -62,6 +62,11 @@ public class Version {
         properties.setProperty(BUILD_PROP, Integer.toString(this.build));
 
         return properties;
+    }
+
+    @Override
+    public String toString() {
+        return this.version();
     }
 
     private static int convertToIntOrDefault(String value, int defValue) {

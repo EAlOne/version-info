@@ -1,9 +1,9 @@
 package ru.ealone.gradle.plugins.versioninfo.task;
 
 import org.gradle.api.DefaultTask;
-import ru.ealone.gradle.plugins.versioninfo.engine.FilePropertiesSupplier;
-import ru.ealone.gradle.plugins.versioninfo.engine.PropertiesSupplier;
-import ru.ealone.gradle.plugins.versioninfo.engine.Version;
+import ru.ealone.gradle.plugins.versioninfo.version.FilePropertiesSupplier;
+import ru.ealone.gradle.plugins.versioninfo.version.PropertiesSupplier;
+import ru.ealone.gradle.plugins.versioninfo.version.Version;
 
 import java.io.File;
 import java.io.FileOutputStream;

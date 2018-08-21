@@ -1,7 +1,7 @@
 package ru.ealone.gradle.plugins.versioninfo.task;
 
 import org.gradle.api.tasks.TaskAction;
-import ru.ealone.gradle.plugins.versioninfo.engine.Version;
+import ru.ealone.gradle.plugins.versioninfo.version.Version;
 
 import java.io.IOException;
 

@@ -1,11 +1,11 @@
-package ru.ealone.gradle.plugins.versioninfo.engine;
+package ru.ealone.gradle.plugins.versioninfo.version;
 
 import org.junit.Test;
 
 import java.util.Properties;
 
 import static org.junit.Assert.*;
-import static ru.ealone.gradle.plugins.versioninfo.engine.Version.*;
+import static ru.ealone.gradle.plugins.versioninfo.version.Version.*;
 
 public class VersionTest {
 
