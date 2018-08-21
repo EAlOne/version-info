@@ -3,18 +3,16 @@ package ru.ealone.gradle.plugins.versioninfo;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.jetbrains.annotations.NotNull;
-import ru.ealone.gradle.plugins.versioninfo.engine.FilePropertiesSupplier;
-import ru.ealone.gradle.plugins.versioninfo.engine.PropertiesConverter;
+import ru.ealone.gradle.plugins.versioninfo.task.IncBuildNumberTask;
+import ru.ealone.gradle.plugins.versioninfo.task.PrintBuildNumberTask;
+import ru.ealone.gradle.plugins.versioninfo.task.UpdateProjectVersionTask;
 
 public class VersionInfoPlugin implements Plugin<Project> {
-    public static final String DEFAULT_FILE_NAME = "version.properties";
-
     @Override
     public void apply(@NotNull Project project) {
-
-        PropertiesConverter propertiesConverter = new PropertiesConverter(new FilePropertiesSupplier(DEFAULT_FILE_NAME));
-
-        String version = propertiesConverter.get();
-        project.setVersion(version);
+        // Add tasks
+        project.getTasks().create("printBuildNumber", PrintBuildNumberTask.class);
+        project.getTasks().create("incBuildNumber", IncBuildNumberTask.class);
+        project.getTasks().create("updateProjectVersion", UpdateProjectVersionTask.class, task -> task.setProject(project));
     }
 }

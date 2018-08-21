@@ -1,4 +1,4 @@
-package ru.ealone.gradle.plugins.versioninfo.engine;
+package ru.ealone.gradle.plugins.versioninfo.version;
 
 import org.jetbrains.annotations.Nullable;
 
